@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const port = process.env.PORT;
+const port = process.env.PORT ||8080 ;
 const cookieParser = require("cookie-parser");
 const DefaultData = require("./defaultdata");
 require("./db/conn");
@@ -10,10 +10,10 @@ const router = require("./routes/router");
 const Products = require("./models/productSchema");
 const jwt = require("jsonwebtoken");
 const path=require("path")
-app.use(express.static(path.join(__dirname,'../home/build')))
+app.use(express.static(path.join(__dirname,"../home/build")))
 app.get('*',function(req,res){
-    res.sendFile(path.join(__dirname,'../home/build/index.html'))
-})
+    res.sendFile(path.join(__dirname,"../home/build/index.html"))
+});
 // middleware
 app.use(express.json());
 app.use(cookieParser(""));
