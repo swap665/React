@@ -29,7 +29,7 @@ if(process.env.NODE_ENV == "production"){
 }
 
 app.listen(port,()=>{
-    console.log(`your server is running on port ${port} `);
+ 
 });
 
 DefaultData();
