@@ -10,9 +10,9 @@ const router = require("./routes/router");
 const Products = require("./models/productSchema");
 const jwt = require("jsonwebtoken");
 const path=require("path")
-app.use(express.static(path.join(__dirname,"../home/build")))
+app.use(express.static(path.join(__dirname,"../home/build")));
 app.get('*',function(req,res){
-    res.sendFile(path.join(__dirname,"../home/build/index.html"))
+    res.sendFile(path.join(__dirname,"../home/build/index.html"));
 });
 // middleware
 app.use(express.json());
